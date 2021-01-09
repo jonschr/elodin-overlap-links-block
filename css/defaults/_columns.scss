@@ -1,47 +1,47 @@
-.elodin-overlap-links {
+.overlap-links-container {
 
 
     &.columns-1 .overlap-link {
-        width: calc(100% / 1);
+        width: calc(100% / 1 - 20px);
     }
 
     &.columns-2 .overlap-link {
-        width: calc(100% / 2);
+        width: calc(100% / 2 - 20px);
     }
 
     &.columns-3 .overlap-link {
-        width: calc(100% / 3);
+        width: calc(100% / 3 - 20px);
     }
 
     &.columns-4 .overlap-link {
-        width: calc(100% / 4);
+        width: calc(100% / 4 - 20px);
     }
 
     &.columns-5 .overlap-link {
-        width: calc(100% / 5);
+        width: calc(100% / 5 - 20px);
     }
 
     @include tablet {
         flex-flow: row wrap;
 
         &.columns-1 .overlap-link {
-            width: 50%;
+            width: calc(100% / 3 - 20px);
         }
 
         &.columns-2 .overlap-link {
-            width: 50%;
+            width: calc(100% / 3 - 20px);
         }
 
         &.columns-3 .overlap-link {
-            width: 50%;
+            width: calc(100% / 3 - 20px);
         }
 
         &.columns-4 .overlap-link {
-            width: 50%;
+            width: calc(100% / 3 - 20px);
         }
 
         &.columns-5 .overlap-link {
-            width: 50%;
+            width: calc(100% / 3 - 20px);
         }
 
     }
@@ -50,23 +50,23 @@
         flex-flow: row wrap;
 
         &.columns-1 .overlap-link {
-            width: 100%;
+            width: calc(100% - 20px);
         }
 
         &.columns-2 .overlap-link {
-            width: 100%;
+            width: calc(100% - 20px);
         }
 
         &.columns-3 .overlap-link {
-            width: 100%;
+            width: calc(100% - 20px);
         }
 
         &.columns-4 .overlap-link {
-            width: 100%;
+            width: calc(100% - 20px);
         }
 
         &.columns-5 .overlap-link {
-            width: 100%;
+            width: calc(100% - 20px);
         }
 
     }

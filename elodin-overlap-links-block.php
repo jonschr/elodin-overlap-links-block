@@ -3,7 +3,7 @@
 	Plugin Name: Elodin Block: Overlap Links
 	Plugin URI: https://github.com/jonschr/elodin-featured-links-block
     Description: Just another overlap links block
-	Version: 1.0.0
+	Version: 1.0.1
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'ELODIN_OVERLAP_LINKS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'ELODIN_OVERLAP_LINKS_VERSION', '1.0.0' );
+define ( 'ELODIN_OVERLAP_LINKS_VERSION', '1.0.1' );
 
 require_once( 'acf-json/fields.php' );
 
@@ -62,6 +62,7 @@ function elodin_overlap_links_render( $block, $content = '', $is_preview = false
     
     //* Default class
     $className = 'elodin-overlap-links';
+    $columncount = null;
     
     //* Default ID
     $id = 'overlap-links-' . $block['id'];
@@ -88,9 +89,9 @@ function elodin_overlap_links_render( $block, $content = '', $is_preview = false
         $className .= ' align' . $block['align'];
         
     if ( isset($columns) ) {
-        $className .= ' columns-' . $columns;
+        $columncount .= ' columns-' . $columns;
     } else {
-        $className .= ' columns-' . $countitems;
+        $columncount .= ' columns-' . $countitems;
     }
                         
     //* color matching for background colors
@@ -114,7 +115,7 @@ function elodin_overlap_links_render( $block, $content = '', $is_preview = false
     //* Render
     printf( '<div id="%s" class="%s" style="%s">', $id, $className, $style );
         
-        echo '<div class="overlap-links-container">';
+        printf( '<div class="overlap-links-container %s">', $columncount );
     
             foreach ( $links as $link ) {
                 
@@ -169,7 +170,7 @@ function elodin_overlap_links_render( $block, $content = '', $is_preview = false
 
 function elodin_overlap_links_enqueue() {
     wp_enqueue_style( 'overlap-links-block-style', plugin_dir_url( __FILE__ ) . 'css/overlap-links.css', array(), ELODIN_OVERLAP_LINKS_VERSION, 'screen' );
-    wp_enqueue_script( 'make-it-overlap', plugin_dir_url( __FILE__ ) . 'js/overlap.js', array( 'jquery' ), ELODIN_OVERLAP_LINKS_VERSION );
+    wp_enqueue_script( 'make-it-overlap', plugin_dir_url( __FILE__ ) . 'js/make-it-overlap.js', array( 'jquery' ), ELODIN_OVERLAP_LINKS_VERSION );
 }
 
 function elodin_overlap_links_block_get_the_colors_formatted_for_acf() {
