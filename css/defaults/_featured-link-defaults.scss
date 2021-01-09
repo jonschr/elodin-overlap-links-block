@@ -1,0 +1,31 @@
+.elodin-overlap-links {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch;
+
+    .overlap-links-container {
+        display: flex;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-bottom: -20px;
+    }
+
+    .overlap-link {
+        margin: 0 10px 20px;
+        background-color: white;
+        padding: 30px;
+        background-color: #f7f7f7;
+        text-align: center;
+    }
+
+    .background-image {
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        margin-bottom: 20px;
+        display: block;
+    }
+}
