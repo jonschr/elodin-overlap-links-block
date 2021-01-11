@@ -3,7 +3,7 @@
 	Plugin Name: Elodin Block: Overlap Links
 	Plugin URI: https://github.com/jonschr/elodin-featured-links-block
     Description: Just another overlap links block
-	Version: 1.0.1
+	Version: 1.0.2
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -27,7 +27,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'ELODIN_OVERLAP_LINKS', dirname( __FILE__ ) );
 
 // Define the version of the plugin
-define ( 'ELODIN_OVERLAP_LINKS_VERSION', '1.0.1' );
+define ( 'ELODIN_OVERLAP_LINKS_VERSION', '1.0.2' );
 
 require_once( 'acf-json/fields.php' );
 
