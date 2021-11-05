@@ -1,16 +1,20 @@
 jQuery(document).ready(function ($) {
 
-    block = $('.elodin-overlap-links');
+    var elodinOverlapLinksBlock = $('.elodin-overlap-links');
 
-    function thetrigger(e) {
+    function elodinOverlapTrigger(e) {
+
+        console.log('trigger');
+
         if ($(window).width() > 560) {
-            block.each(reposition);
+            elodinOverlapLinksBlock.each(elodinOverlapReposition);
         } else {
-            block.each(reset);
+            elodinOverlapLinksBlock.each(elodinOverlapReset);
         }
     }
 
-    function reset() {
+    function elodinOverlapReset() {
+
         var element = $(this);
 
         element.css('position', 'static');
@@ -35,7 +39,7 @@ jQuery(document).ready(function ($) {
 
     }
 
-    function reposition() {
+    function elodinOverlapReposition() {
 
         // define the element we're looking at
         var element = $(this);
@@ -69,13 +73,8 @@ jQuery(document).ready(function ($) {
             next.css('margin-top', shift + 'px');
         }
 
-
-
     }
 
-
-    $(window).on('load resize', thetrigger);
-
-
+    $(window).on('load resize', elodinOverlapTrigger);
 
 });
